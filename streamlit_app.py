@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 import altair as alt
 
-#with st.expander("Abzüge Festlegen"):
 st.title("Umrechnung Stundenlohn in Jahreslohn")
 st.header("Festlegung Abgaben")
 col1, col2, col3 = st.columns(3)
@@ -48,17 +47,6 @@ with col22:
 with col23:  
     st.metric( label="Berechneter Jahreslohn [CHF]", value=f'{Geschätzter_Brutto_Jahreslohn:,.2f}')
 
-#df = pd.DataFrame(
-#    [
-#       {"Key": 'Umsatz', "Value": f'{Umsatz:,.2f}'},
-#       {"Key": "Jahreslohn Netto", "Value": f'{Geschätzter_Brutto_Jahreslohn:,.2f}'},
-#       {"Key": "st.time_input", "Value": 3},
-#   ]
-#)
-
-#st.table(df)
-
-
 
 st.header("Zusammensetzung von CHF 100 Lohn")
 source = pd.DataFrame({
@@ -76,7 +64,6 @@ base = alt.Chart(source).encode(
     alt.Theta("value:Q").stack(True),
     alt.Color("category:N").legend(None)
 )
-
 
 pie = base.mark_arc(outerRadius=120)
 text = base.mark_text(radius=150, size=16).encode(text="category:N")
