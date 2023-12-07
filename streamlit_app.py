@@ -4,7 +4,7 @@ import pandas as pd
 import altair as alt
 
 st.title("Umrechnung Stundenlohn in Jahreslohn")
-st.header("Festlegung Abgaben")
+st.header("Festlegung gesetzliche Abgaben")
 col1, col2, col3 = st.columns(3)
 with col1:
     AHV = st.number_input('AHV [%]', min_value=0.0, value=10.6, max_value=20.0)
